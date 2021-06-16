@@ -1,0 +1,18 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<footer class="page-main">
+    <div class="footer-copyright">
+        <span class="copyright-disclamer"><?= $block->escapeHtml(__('© DBsports.com 2021. All Rights Reserved')); ?></span>
+        <div class="payments-block">
+            <img class="payments-footer" src="<?php echo $this->getViewFileUrl('images/payment-logos.png'); ?>" alt="<?= __('Payments'); ?>">
+            <img class="payments-footer" src="<?php echo $this->getViewFileUrl('images/payment-laybuy.png'); ?>" alt="<?= __('Payments'); ?>">
+            <img class="payments-footer" src="<?php echo $this->getViewFileUrl('images/payment2.png'); ?>" alt="<?= __('Payments'); ?>">
+        </div>
+        <span class="made-by"><? /* @escapeNotVerified */ echo __('Made by <strong>DB SPORTS</strong>'); ?></span>
+    </div>
+</footer>

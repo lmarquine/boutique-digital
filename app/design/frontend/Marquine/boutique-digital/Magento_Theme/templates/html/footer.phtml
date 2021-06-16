@@ -1,0 +1,72 @@
+<div class="page-main">
+    <div class="footer-links">
+        <div class="col products-footer">
+            <h4 class="heading"><?= __('DB Sports Products'); ?></h4>
+            <ul class="links">
+                <li class="link products-link"><?= __('Link Description One'); ?></li>
+                <li class="link products-link"><?= __('Link Description Two'); ?></li>
+                <li class="link products-link"><?= __('Link Description Three'); ?></li>
+                <li class="link products-link"><?= __('Link Description Four'); ?></li>
+                <li class="link products-link"><?= __('Link Description Five'); ?></li>
+                <li class="link products-link"><?= __('Link Description Six'); ?></li>
+            </ul>
+        </div>
+        <div class="col customer-services">
+            <h4 class="heading"><?= __('Customer Service'); ?></h4>
+            <ul class="links">
+                <li class="link service-link"><?= __('Contact Us'); ?></li>
+                <li class="link service-link"><?= __('FAQ’S'); ?></li>
+                <li class="link service-link"><?= __('Delivery & Returns'); ?></li>
+                <li class="link service-link"><?= __('Size Guide'); ?></li>
+                <li class="link service-link"><?= __('Personalisation'); ?></li>
+                <li class="link service-link"><?= __('Superstore Opening Hours'); ?></li>
+                <li class="link service-link"><?= __('Track My Order'); ?></li>
+            </ul>
+        </div>
+        <div class="col company">
+            <h4 class="heading"><?= __('Company Information'); ?></h4>
+            <ul class="links">
+                <li class="link company-link"><a href="<?= $this->getUrl(); ?>"><?= __('About Us'); ?></a></li>
+                <li class="link company-link"><a href="<?= $this->getUrl(); ?>"><?= __('Visit Us'); ?></a></li>
+                <li class="link company-link"><a href="<?= $this->getUrl(); ?>"><?= __('Terms & Cconditions'); ?></a></li>
+                <li class="link company-link"><a href="<?= $this->getUrl(); ?>"><?= __('Privacy Policy'); ?></a></li>
+                <li class="link company-link"><a href="<?= $this->getUrl(); ?>"><?= __('Terms of use'); ?></a></li>
+                <li class="link company-link"><a href="<?= $this->getUrl(); ?>"><?= __('Accessibility'); ?></a></li>
+                <li class="link company-link"><a href="<?= $this->getUrl(); ?>"><?= __('Secure Payments'); ?></a></li>
+            </ul>
+        </div>
+        <div class="col follow-us">
+            <h4 class="heading"><?= __('Follow Us'); ?></h4>
+            <ul class="links">
+                <li class="link social-network facebook"><i class="fab fa-facebook-f"></i><a href="https://facebook.com" target="_blank"><?= __('Facebook'); ?></a></li>
+                <li class="link social-network instagram"><i class="fab fa-instagram"></i></i><a href="https://facebook.com" target="_blank"><?= __('Instagram'); ?></a></li>
+                <li class="link social-network twitter"><i class="fab fa-twitter"></i><a href="https://facebook.com" target="_blank"><?= __('Twitter'); ?></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require(['jquery',
+        'matchMedia',
+        'accordion'], function($, mediaCheck) {
+
+        mediaCheck({
+            media: '(min-width: 768px)',
+            // Switch to Desktop Version
+            entry: function () {
+                detailsTabs.tabs({
+                    openedState: "active",
+                    collapsible: false
+                });
+            },
+            // Switch to Mobile Version
+            exit: function () {
+                $('.col').on('click', function() {
+                    $(this).find('.heading').toggleClass('active');
+                    $(this).find('.links').toggleClass('active');
+                });
+            }
+        });
+    })
+</script>

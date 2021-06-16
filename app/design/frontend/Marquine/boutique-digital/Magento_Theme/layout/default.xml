@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/*
+ *
+ * @author      Leonardo Marquine Pereira <lmarquine@gmail.com>
+ * @copyright   2021 Leonardo (https://www.linkedin.com/in/leonardo-marquine/)
+ * @license     https://www.linkedin.com/in/leonardo-marquine/ Copyright
+ * @link        https://www.linkedin.com/in/leonardo-marquine/
+ *
+ */
+ -->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <head>
+        <css src="https://use.fontawesome.com/releases/v5.7.1/css/all.css" src_type="url"/>
+    </head>
+    <body>
+        <referenceContainer name="footer-container" remove="true"/>
+        <referenceContainer name="page.wrapper">
+            <container name="dbsports-footer" before="before.body.end" htmlId="footer-dbsports" label="Page Footer Container" htmlTag="footer" htmlClass="page-footer">
+                <block name="db-sports" as="dbfooter" template="Magento_Theme::html/footer.phtml"/>
+            </container>
+        </referenceContainer>
+    </body>
+</layout>

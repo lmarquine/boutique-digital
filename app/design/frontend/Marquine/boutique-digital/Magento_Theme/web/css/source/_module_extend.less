@@ -1,0 +1,169 @@
+/*
+ *
+ * @author      Leonardo Marquine Pereira <lmarquine@gmail.com>
+ * @copyright   2021 Leonardo (https://www.linkedin.com/in/leonardo-marquine/)
+ * @license     https://www.linkedin.com/in/leonardo-marquine/ Copyright
+ * @link        https://www.linkedin.com/in/leonardo-marquine/
+ *
+ */
+
+//
+//  Theme variables
+//  _____________________________________________
+
+//  Messages
+@message-global-note__color: @text__color;
+@message-global-note__background: @color-yellow-light2;
+@message-global-note-link__color: @link__color;
+@message-global-note-link__color-hover: @link__hover__color;
+@message-global-note-link__color-active: @link__active__color;
+@message-global-note__border-color: @color-yellow-light3;
+
+@message-global-caution__color: @color-white;
+@message-global-caution__background: @color-red9;
+@message-global-caution-link__color: @link__color;
+@message-global-caution-link__color-hover: @link__hover__color;
+@message-global-caution-link__color-active: @link__active__color;
+@message-global-caution__border-color: none;
+
+@header__background-color: false;
+@header-panel__background-color: @color-gray-middle4;
+@header-panel__text-color: @color-white;
+@header-icons-color: @color-gray46;
+@header-icons-color-hover: @color-gray20;
+@customer-welcome__z-index: @dropdown-list__z-index + 1;
+
+@addto-color: @color-gray40;
+@addto-hover-color: @primary__color;
+@minicart-icons-color: @header-icons-color;
+@minicart-icons-color-hover: @header-icons-color-hover;
+
+@price-color: @color-gray34;
+@price-size: 22px;
+@price-size-desktop: 36px;
+
+@button__shadow: inset 0 1px 0 0 rgba(255, 255, 255, 1), inset 0 -1px 0 0 fade(@border-color__base, 30); // Used for secondary button and catalog toolbar controls
+@button__shadow-active: inset 0 1px 0 0 fade(@border-color__base, 80), inset 0 -1px 0 0 fade(@border-color__base, 30); // Used for secondary button and catalog toolbar controls
+
+@h1__margin-bottom__desktop: @indent__xl;
+
+//  Footer
+@footer__background-color: @color-theme-primary;
+@footer-links-separator-border-color: @color-theme-primary;
+@footer-links-color: @color-white;
+@footer-links-color-hover: @color-white;
+@footer-links-color-current: @color-white;
+
+//  Layered navigation
+@filter-title-background-color: @color-gray94;
+@filter-link: @color-gray-darken4;
+@filter-link-hover: darken(@filter-link, 30%);
+@filter-quantity: @color-gray46;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    //
+    //  Footer
+    //  ---------------------------------------------
+
+    .page-footer {
+        margin-top: @indent__m;
+        background: @theme__color__primary;
+    }
+
+    .footer {
+        &.content {
+
+            .links {
+                > li {
+                    .lib-css(background, @footer__background-color);
+                    .lib-font-size(16);
+                    border-top: 1px solid @footer-links-separator-border-color;
+                    margin: 0 -@layout__width-xs-indent;
+                    padding: 0 @layout__width-xs-indent;
+                }
+            }
+        }
+    }
+
+    .footer-copyright {
+        .lib-vendor-prefix-display();
+        .lib-vendor-box-align(center);
+        .lib-vendor-prefix-flex-wrap(wrap);
+        justify-content: space-between;
+        .payments-footer {
+            height: 100%;
+        }
+    }
+
+    .copyright {
+        .lib-css(background-color, @color-white);
+        .lib-css(color, @color-black);
+        box-sizing: border-box;
+        display: block;
+        padding: @indent__s;
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    footer {
+        &.page-main {
+            margin: 0;
+            padding: 5px;
+        }
+    }
+    .footer-copyright {
+        text-align: center;
+        height: 100%;
+        max-height: 80px;
+        .payments-block {
+            .lib-vendor-prefix-display();
+            .lib-vendor-prefix-flex-wrap(wrap);
+            width: 100%;
+            justify-content: space-between;
+            padding-bottom: 25px;
+        }
+        .payments-footer {
+            max-height: 26px;
+        }
+        .copyright-disclamer {
+            font-size: 12px;
+            order: 1;
+        }
+        .made-by {
+            font-size: 12px;
+            order: 1;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .footer-copyright {
+        padding-top: 25px;
+        .lib-vendor-prefix-display();
+        justify-content: space-between;
+        height: 100%;
+        max-height: 80px;
+        .payments-footer {
+            max-height: 35px;
+        }
+        .copyright-disclamer {
+            font-size: 12px;
+        }
+        .made-by {
+            font-size: 12px;
+        }
+    }
+}
